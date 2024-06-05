@@ -14,15 +14,15 @@
 // • The modulo operator % can help determine if a number is even or odd.
 
 interface Lesson { name: string; status: boolean }
-let myWork: Lesson[] = [];               // Create an empty array to hold lesson objects
+let my_Work: Lesson[] = [];               // Create an empty array to hold lesson objects
 for (let i = 1; i <= 10; i++) {          // Loop through numbers 1 to 10 and create lesson objects with alternating statuses
 const lesson: Lesson = {
         name: `Lesson ${i}`,
         status: i % 2 === 0 ? false : true
     };
-    myWork.push(lesson);
+    my_Work.push(lesson);
 }
-console.log(myWork); // Print the list of lesson objects
+console.log(my_Work); // Print the list of lesson objects
 
 // 2. Guessing Game (Using while loop )
 // Objective: Create a simple number guessing game where the user tries to guess a randomly 
@@ -35,17 +35,15 @@ console.log(myWork); // Print the list of lesson objects
 // 5. Iterate over guesses: Use a while loop to iterate over the predefined guesses until the correct guess is made.
 // 6. Check the user's guess: Inside the loop, check if the current guess matches the random number. Provide feedback if the guess is too high or too low.
 
-const maxValue: number = 10;
-const randomNumber: number = Math.floor(Math.random() * maxValue) + 1; // Step 2: Generate a random number
+const max_Value: number = 10;
+const randomNumber: number = Math.floor(Math.random() * max_Value) + 1; // Generate a random number
 console.log("Random number:", randomNumber);
-
-let guessCorrect: boolean = false;   // Step 3: Track the guess status
-const predefinedGuesses: number[] = [3, 7, 5, 9, 2, 6];// Step 4: Simulate user guesses
-let i = 0;    // Step 5: Iterate over guesses
+let guessCorrect: boolean = false;                           // Track the guess status
+const predefinedGuesses: number[] = [3, 7, 5, 9, 2, 6];     // Simulate user guesses
+let i = 0;                                                  // Iterate over guesses
 while (!guessCorrect && i < predefinedGuesses.length) {
     const currentGuess = predefinedGuesses[i];
     console.log("Current guess:", currentGuess);
-    
     if (currentGuess === randomNumber) {        // Step 6: Check the user's guess
         console.log("Congratulations! You guessed the correct number.");
         guessCorrect = true;
@@ -67,11 +65,11 @@ while (!guessCorrect && i < predefinedGuesses.length) {
 // 4. Continue to loop until the counter is equal to or more than 100: The loop should run as long as the counter is less than 100.
 
 let counter: number = 0;       // Set the starting counter to 0
-let step: number = 20;       // Create a variable, step, to increase your counter by
+let step: number = 15;       // Create a variable, step, to increase your counter by
 do {                           // Add a do...while loop
     console.log("Counter value:", counter);
     counter += step;
-} while (counter < 100);
+} while (counter <= 100);
 
 // 4.Exploring Objects with for...in Loop
 // Objective: Practice working with objects in TypeScript and iterating over their properties using a for...in loop.
@@ -81,10 +79,10 @@ do {                           // Add a do...while loop
 // o Iterate through the properties of myObject using a for...in loop.
 // o Inside the loop, print each property's name and its corresponding value to the  console.
 
-let my_Object = {item_1: "value1", item_2: "value2", item_3: "value3"};  // Create a simple object with three items properties
-for (let key in my_Object) {     // Step 2: Use a for...in loop to get properties' names and values from the object
- if (my_Object.hasOwnProperty(key)) {
-        console.log(`Property name: ${key}, Value: ${my_Object[key]}`);
+let my_Object = {item_1: "Bags", item_2: "Shirts", item_3: "Laptops"};  // Create a simple object with three items properties
+for (let x in my_Object) {     // Step 2: Use a for...in loop to get properties' names and values from the object
+ if (my_Object.hasOwnProperty(x)) {
+        console.log(`Property name: ${x}, Value: ${my_Object[x]}`);
     };
 };
 
@@ -92,12 +90,29 @@ for (let key in my_Object) {     // Step 2: Use a for...in loop to get propertie
 // Objective: Practice working with arrays in TypeScript and using for loops and for...of loops to iterate through array elements.
 // Instructions: // 1. Create an empty array:  o Define an empty array called myArray.
 // 2. Run a loop 10 times, adding a new incrementing value to the array:  o Use a for loop to iterate 10 times.
+// o In each iteration, add a new incrementing value (starting from 1) to the myArray.
+// 3. Log the array into the console:
+// o After populating the array, log the myArray into the console.
+// 4. Use the for loop to iterate through the array: o Use a for loop to iterate through the array elements.
+// o Adjust the number of iterations based on the number of values in the array. o Output each array element along with its index into the console.
+// Use the for...of loop to output the value into the console from the array:
+// o Use a for...of loop to iterate through the array elements. o Output each array element directly into the console.
 
 let my_Array: number [] = [];          // Create an empty array
 for (let num = 1; num <= 10; num++) {  //  Run a loop 10 times, adding a new incrementing value to the array
     my_Array.push(num);
 }
-console.log(my_Array);                //console for print loop 10 times
+console.log("Array", my_Array);        //console for print loop 10 times
+console.log("Using for loop:");        // Use the for loop to iterate through the array
+
+for (let i = 0; i < my_Array.length; i++) {
+    console.log(`Index ${i}: ${my_Array[i]}`);
+}
+console.log("Using for...of loop:");  // Use the for...of loop to output the value into the console from the array
+
+for (const element of my_Array) {
+    console.log(element);
+}
 
 
 
